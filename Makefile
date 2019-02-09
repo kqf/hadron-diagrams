@@ -7,8 +7,8 @@ all: $(targets)
 %.pdf: %.tex
 	-pdflatex --shell-escape $^
 	-pdflatex --shell-escape $^
-	echo "Finished"
-	open diagrams.pdf
+	-@$(OPEN) diagrams.pdf
+	echo "\e[42mFinished successfully\033[0m"
 
 .PHONY: clean
 
