@@ -3,6 +3,16 @@
 \DeclareGraphicsRule{*}{mps}{*}{}
 
 % Original code: https://wiki.physik.uzh.ch/cms/latex:feynman#proton-proton_collisions_with_a_hard_process
+\newcommand{\fmfvertex}[2]{%
+   \fmfv{
+       l=#1,
+       l.d=0,
+       decor.shape=circle,
+       decor.filled=empty,
+       decor.size=30
+    }{#2}
+}
+
 
 \begin{document}
     \large
@@ -24,7 +34,7 @@
                 \fmf{fermion,tension=2,label=$x_2p_2$,label.side=left}{vq,v}
                 % proton 1
                 \fmfv{l=$p^+$,l.a=180,l.d=10}{ip}
-                \fmf{phantom}{ip,vp}
+                \fmf{phantom, tension=4}{ip,vp}
                 \fmfi{fermion,l=$p_1$,l.s=left,l.d=8}
                               {vpath (__ip,__vp) scaled 1.01 shifted (-2.4, 6)}
                 \fmfi{fermion}{vpath (__ip,__vp) scaled 1.01 shifted (-2.4, 0)}
@@ -45,7 +55,9 @@
                 \fmfi{fermion}{vpath (__vp,__x1) scaled 1.0 shifted ( 0.0, 2.0)}
                 \fmfi{fermion}{vpath (__vp,__x2) scaled 1.0 shifted ( 0.0, 0.0)}
                 \fmfi{fermion}{vpath (__vp,__x3) scaled 1.0 shifted ( 0.0,-2.0)}
-                \fmfblob{25}{vp}
+                \fmfvertex{
+                    ${\scriptscriptstyle \ f_a(x_a)}$
+                }{vp}
 
                 % X2
                 \fmfshift{25 left}{y1}
@@ -56,8 +68,9 @@
                 \fmfi{fermion}{vpath (__vq,__y1) scaled 1.0 shifted ( 0.0,-2.0)}
                 \fmfi{fermion}{vpath (__vq,__y2) scaled 1.0 shifted ( 0.0, 0.0)}
                 \fmfi{fermion}{vpath (__vq,__y3) scaled 1.0 shifted ( 0.0, 2.0)}
-                \fmfblob{25}{vq}
-
+                \fmfvertex{
+                    ${\scriptscriptstyle \ f_b(x_b)}$
+                }{vq}
                 % hard interaction
                 \fmf{phantom,tension=1}{v,o2} % to help \fmfi
                 % \fmf{phantom,tension=1}{v,o3} % to help \fmfi
@@ -67,14 +80,50 @@
                 % \fmfi{fermion}{vpath (__v,__o2) scaled 1.01 shifted ( 0,-2)}
                 % \fmfi{fermion}{vpath (__v,__o3) scaled 1.01 shifted ( 0, 0)}
                 % \fmfi{fermion}{vpath (__v,__o4) scaled 1.01 shifted ( 0, 2)}
-                \fmfblob{25}{v}
+                \fmfvertex{
+                    ${\scriptscriptstyle \ \sigma_{ab \rightarrow cx}}$
+                }{v}
 
                 \fmf{phantom}{vhad,o3} % to help \fmfi
                 \fmfi{fermion}{vpath (__vhad,__o3) scaled 1.01 shifted ( 0, 0)}
                 \fmf{fermion}{v,vhad}
-                \fmfblob{25}{vhad}
+                \fmfvertex{
+                    ${\scriptscriptstyle \ D_c^{h_c}(z_c)}$
+                }{vhad}
 
 
+                % \fmfleft{i1,i2}
+                % \fmfright{o1,meson,o2}
+
+
+                % % Proton1
+                % % \fmf{fermion, tension=4}{i1,proton1}
+                % \fmf{phantom}{i1,proton1}
+                % \fmfi{fermion}{vpath (__i1,__o1) scaled 1.01 shifted (-2.4, 6)}
+                % \fmfi{fermion}{vpath (__i1,__o1) scaled 1.01 shifted (-2.4, 0)}
+                % \fmfi{fermion}{vpath (__i1,__o1) scaled 1.01 shifted (-2.4,-6)} 
+
+                % \fmfblob{10}{proton1}
+                % \fmf{fermion}{proton1,o1}
+
+
+                % % Proton2
+                % \fmf{fermion, tension=4}{i2,proton2}
+                % \fmfblob{10}{proton2}
+                % \fmf{fermion}{proton2,o2}
+                % \fmffreeze
+
+                % % Parton-Parton interaction
+                % \fmf{fermion, tension=2}{proton1,interaction}
+                % \fmf{fermion, tension=2}{proton2,interaction}
+                % \fmfblob{10}{interaction}
+                % \fmf{phantom}{interaction,meson}
+                % \fmffreeze
+
+                % % Fragmentation Function
+                % \fmf{fermion, tension=2}{interaction,h}
+                % \fmfblob{10}{h}
+                % \fmf{fermion}{h,meson}
             \end{fmfgraph*}
         \end{fmffile}
     \end{center}
