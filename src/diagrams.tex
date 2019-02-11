@@ -72,10 +72,10 @@
                     ${\scriptscriptstyle \ f_b(x_b)}$
                 }{vq}
                 % hard interaction
-                \fmf{phantom,tension=1}{v,o2} % to help \fmfi
-                % \fmf{phantom,tension=1}{v,o3} % to help \fmfi
-                \fmf{phantom,tension=1}{v,o4} % to help \fmfi
-                % \fmf{phantom,tension=1}{v,o6} % to help \fmfi
+                \fmf{phantom,tension=1}{vhad,o2} % to help \fmfi
+                \fmf{phantom,tension=1}{vhad,o3} % to help \fmfi
+                \fmf{phantom,tension=1}{vhad,o4} % to help \fmfi
+                \fmf{phantom,tension=1}{vhad,o6} % to help \fmfi
                 \fmffreeze
                 % \fmfi{fermion}{vpath (__v,__o2) scaled 1.01 shifted ( 0,-2)}
                 % \fmfi{fermion}{vpath (__v,__o3) scaled 1.01 shifted ( 0, 0)}
@@ -85,8 +85,10 @@
                 }{v}
 
                 \fmf{phantom}{vhad,o3} % to help \fmfi
+                \fmfi{fermion}{vpath (__vhad,__o2) scaled 1.01 shifted ( 0,-2)}
                 \fmfi{fermion}{vpath (__vhad,__o3) scaled 1.01 shifted ( 0, 0)}
-                \fmf{fermion}{v,vhad}
+                \fmfi{fermion}{vpath (__vhad,__o4) scaled 1.01 shifted ( 0, 2)}
+                \fmf{fermion, tension=4}{v,vhad}
                 \fmfvertex{
                     ${\scriptscriptstyle \ D_c^{h_c}(z_c)}$
                 }{vhad}
