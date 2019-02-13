@@ -84,7 +84,12 @@
                     ${\scriptscriptstyle \ \sigma_{ab \rightarrow cx}}$
                 }{v}
 
-                \fmf{phantom, tension=0.5}{vhad,o3} % to help \fmfi
+                \fmf{phantom, tension=2}{vhad,o2} % to help \fmfi
+                \fmf{phantom, tension=2}{vhad,o3} % to help \fmfi
+                \fmf{phantom, tension=2}{vhad,o4} % to help \fmfi
+                \fmffreeze
+                \fmfi{fermion}{vpath (__vhad,__o2) scaled 1.01 shifted ( 0,-2)}
+                \fmfi{fermion}{vpath (__vhad,__o4) scaled 1.01 shifted ( 0, 2)}
                 \fmfi{fermion, tension=0.5}{vpath (__vhad,__o3) scaled 1.01 shifted ( 0, 0)}
                 \fmf{fermion, tension=0.5}{v,vhad}
                 \fmfvertex{
