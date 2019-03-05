@@ -16,87 +16,80 @@
 
 \begin{document}
     \large
+    \centering
+    \begin{fmffile}{scattering}
+        \begin{fmfgraph*}(160,160)
+            \fmfleft{i1,iq,i2,ip,i3}
+            \fmfright{y1,y2,y3,o1,o2,o3,o4,o5,x3,x2,x1}
+            \fmfset{arrow_len}{10}
+            % skeleton
+            \fmf{phantom,tension=0.50}{vq,vp}
+            \fmf{phantom}{ip,vp,x1}
+            \fmf{phantom}{iq,vq,y1}
+            \fmf{phantom}{x1,vhad,y1}
+            \fmffreeze
+            % parton
+            \fmf{fermion,tension=1.5,label=$x_1p_1$,label.side=right}{vp,v}
+            \fmf{fermion,tension=1.5,label=$x_2p_2$,label.side=left}{vq,v}
+            % proton 1
+            \fmfv{l=$p^+$,l.a=180,l.d=10}{ip}
+            \fmf{phantom, tension=4}{ip,vp}
+            \fmfi{fermion,l=$p_1$,l.s=left,l.d=8}
+                          {vpath (__ip,__vp) scaled 1.01 shifted (-2.4, 6)}
+            \fmfi{fermion}{vpath (__ip,__vp) scaled 1.01 shifted (-2.4, 0)}
+            \fmfi{fermion}{vpath (__ip,__vp) scaled 1.01 shifted (-2.4,-6)}
+            % proton 2
+            \fmfv{l=$p^+$,l.a=180,l.d=10}{iq}
+            \fmf{phantom}{iq,vq}
+            \fmfi{fermion}{vpath (__iq,__vq) scaled 1.01 shifted (-2.4, 6)}
+            \fmfi{fermion}{vpath (__iq,__vq) scaled 1.01 shifted (-2.4, 0)}
+            \fmfi{fermion,l=$p_2$,l.s=right,l.d=8}
+                          {vpath (__iq,__vq) scaled 1.01 shifted (-2.4,-6)}
+            % X1
+            \fmfshift{25 left}{x1}
+            \fmfshift{20 left}{x2,x3}
+            \fmf{phantom}{vp,x1} % to help \fmfi
+            \fmf{phantom}{vp,x2} % to help \fmfi
+            \fmf{phantom}{vp,x3} % to help \fmfi
+            \fmfi{fermion}{vpath (__vp,__x1) scaled 1.0 shifted ( 0.0, 2.0)}
+            \fmfi{fermion}{vpath (__vp,__x2) scaled 1.0 shifted ( 0.0, 0.0)}
+            \fmfi{fermion}{vpath (__vp,__x3) scaled 1.0 shifted ( 0.0,-2.0)}
+            \fmfvertex{
+                ${\scriptscriptstyle \ f_a(x_a)}$
+            }{vp}
 
-    \begin{center}
-        \begin{fmffile}{scattering}
-            \begin{fmfgraph*}(160,160)
-                \fmfleft{i1,iq,i2,ip,i3}
-                \fmfright{y1,y2,y3,o1,o2,o3,o4,o5,x3,x2,x1}
-                \fmfset{arrow_len}{10}
-                % skeleton
-                \fmf{phantom,tension=0.50}{vq,vp}
-                \fmf{phantom}{ip,vp,x1}
-                \fmf{phantom}{iq,vq,y1}
-                \fmf{phantom}{x1,vhad,y1}
-                \fmffreeze
-                % parton
-                \fmf{fermion,tension=2,label=$x_1p_1$,label.side=right}{vp,v}
-                \fmf{fermion,tension=2,label=$x_2p_2$,label.side=left}{vq,v}
-                % proton 1
-                \fmfv{l=$p^+$,l.a=180,l.d=10}{ip}
-                \fmf{phantom, tension=4}{ip,vp}
-                \fmfi{fermion,l=$p_1$,l.s=left,l.d=8}
-                              {vpath (__ip,__vp) scaled 1.01 shifted (-2.4, 6)}
-                \fmfi{fermion}{vpath (__ip,__vp) scaled 1.01 shifted (-2.4, 0)}
-                \fmfi{fermion}{vpath (__ip,__vp) scaled 1.01 shifted (-2.4,-6)}
-                % proton 2
-                \fmfv{l=$p^+$,l.a=180,l.d=10}{iq}
-                \fmf{phantom}{iq,vq}
-                \fmfi{fermion}{vpath (__iq,__vq) scaled 1.01 shifted (-2.4, 6)}
-                \fmfi{fermion}{vpath (__iq,__vq) scaled 1.01 shifted (-2.4, 0)}
-                \fmfi{fermion,l=$p_2$,l.s=right,l.d=8}
-                              {vpath (__iq,__vq) scaled 1.01 shifted (-2.4,-6)}
-                % X1
-                \fmfshift{25 left}{x1}
-                \fmfshift{20 left}{x2,x3}
-                \fmf{phantom}{vp,x1} % to help \fmfi
-                \fmf{phantom}{vp,x2} % to help \fmfi
-                \fmf{phantom}{vp,x3} % to help \fmfi
-                \fmfi{fermion}{vpath (__vp,__x1) scaled 1.0 shifted ( 0.0, 2.0)}
-                \fmfi{fermion}{vpath (__vp,__x2) scaled 1.0 shifted ( 0.0, 0.0)}
-                \fmfi{fermion}{vpath (__vp,__x3) scaled 1.0 shifted ( 0.0,-2.0)}
-                \fmfvertex{
-                    ${\scriptscriptstyle \ f_a(x_a)}$
-                }{vp}
+            % X2
+            \fmfshift{25 left}{y1}
+            \fmfshift{20 left}{y2,y3}
+            \fmf{phantom}{vq,y1} % to help \fmfi
+            \fmf{phantom}{vq,y2} % to help \fmfi
+            \fmf{phantom}{vq,y3} % to help \fmfi
+            \fmfi{fermion}{vpath (__vq,__y1) scaled 1.0 shifted ( 0.0,-2.0)}
+            \fmfi{fermion}{vpath (__vq,__y2) scaled 1.0 shifted ( 0.0, 0.0)}
+            \fmfi{fermion}{vpath (__vq,__y3) scaled 1.0 shifted ( 0.0, 2.0)}
+            \fmfvertex{
+                ${\scriptscriptstyle \ f_b(x_b)}$
+            }{vq}
+            % hard interaction
+            \fmf{phantom,tension=0.5}{v,o2} % to help \fmfi
+            \fmf{phantom,tension=0.5}{v,o4} % to help \fmfi
+            \fmffreeze
+            \fmfvertex{
+                ${\scriptscriptstyle \ \sigma_{ab \rightarrow cx}}$
+            }{v}
 
-                % X2
-                \fmfshift{25 left}{y1}
-                \fmfshift{20 left}{y2,y3}
-                \fmf{phantom}{vq,y1} % to help \fmfi
-                \fmf{phantom}{vq,y2} % to help \fmfi
-                \fmf{phantom}{vq,y3} % to help \fmfi
-                \fmfi{fermion}{vpath (__vq,__y1) scaled 1.0 shifted ( 0.0,-2.0)}
-                \fmfi{fermion}{vpath (__vq,__y2) scaled 1.0 shifted ( 0.0, 0.0)}
-                \fmfi{fermion}{vpath (__vq,__y3) scaled 1.0 shifted ( 0.0, 2.0)}
-                \fmfvertex{
-                    ${\scriptscriptstyle \ f_b(x_b)}$
-                }{vq}
-                % hard interaction
-                \fmf{phantom,tension=0.5}{v,o2} % to help \fmfi
-                % \fmf{phantom,tension=0.5}{v,o3} % to help \fmfi
-                \fmf{phantom,tension=0.5}{v,o4} % to help \fmfi
-                % \fmf{phantom,tension=1}{v,o6} % to help \fmfi
-                \fmffreeze
-                % \fmfi{fermion}{vpath (__v,__o2) scaled 1.01 shifted ( 0,-2)}
-                % \fmfi{fermion}{vpath (__v,__o3) scaled 1.01 shifted ( 0, 0)}
-                % \fmfi{fermion}{vpath (__v,__o4) scaled 1.01 shifted ( 0, 2)}
-                \fmfvertex{
-                    ${\scriptscriptstyle \ \sigma_{ab \rightarrow cx}}$
-                }{v}
-
-                \fmf{phantom, tension=2}{vhad,o2} % to help \fmfi
-                \fmf{phantom, tension=2}{vhad,o3} % to help \fmfi
-                \fmf{phantom, tension=2}{vhad,o4} % to help \fmfi
-                \fmffreeze
-                \fmfi{fermion}{vpath (__vhad,__o2) scaled 1.01 shifted ( 0,-2)}
-                \fmfi{fermion}{vpath (__vhad,__o4) scaled 1.01 shifted ( 0, 2)}
-                \fmfi{fermion, tension=0.5}{vpath (__vhad,__o3) scaled 1.01 shifted ( 0, 0)}
-                \fmf{fermion, tension=0.5}{v,vhad}
-                \fmfvertex{
-                    ${\scriptscriptstyle \ D_c^{h_c}(z_c)}$
-                }{vhad}
-            \end{fmfgraph*}
-        \end{fmffile}
-    \end{center}
+            \fmf{phantom, tension=2}{vhad,o2} % to help \fmfi
+            \fmf{phantom, tension=2}{vhad,o3} % to help \fmfi
+            \fmf{phantom, tension=2}{vhad,o4} % to help \fmfi
+            \fmffreeze
+            \fmfi{fermion}{vpath (__vhad,__o2) scaled 1.01 shifted ( 0,-2)}
+            \fmfi{fermion}{vpath (__vhad,__o4) scaled 1.01 shifted ( 0, 2)}
+            \fmfi{fermion, tension=0.5}{vpath (__vhad,__o3) scaled 1.01 shifted ( 0, 0)}
+            \fmf{fermion, label=$c$, label.side=right}{v,vhad}
+            \fmfvertex{
+                ${\scriptscriptstyle \ D_c^{h_c}(z_c)}$
+            }{vhad}
+        \end{fmfgraph*}
+    \end{fmffile}
     \write18{mpost scattering}
 \end{document}
