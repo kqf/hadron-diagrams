@@ -14,7 +14,7 @@ deploy:
    api_key:
      - secure: "mtF3FSJ4aPapUHjbg2X2/PmpwjO6RwJYb46L3y3FFxF0y+vkfTnAiCqW8kaptgENhYrsGrxM2UT5ReYgDSQGNrb23waqF+WiSB27mOui5Rf30oqS5uQ3gUwXZnPfnMTg1hrFN83xegCUo514EPruVGLt6m5LOYguDllw4hiB6fMcPcb5/DzvcRC7vjZun82vOPFtPgyjfM+TNybToQ1ky2vpjwzbgUuupXYHg5TMMQ3eAmCSSFM43I/YG10r6VxbXr5ubyhq4BRODt1dyyvhzcK/gWb9EMDwDf1Y9NyuPD3yj0sAIpWm8zEuVgw1mXi7wss/wxkOVyMBvhEYtTuqnSVJ1byjSGaPzHKVwghvCE4zw2ZRDVBXShEuazOGq0DES7uPRKrr8gh/8s/Qjw07Xw/sUvCjlBQ1+lGM15OW7v4o02vNHoL8OS0qIzCYDoCzdikrqb5F8l7ClWIu4E19x/8AFUpzOh54EFaKOfp11LWfDS/Lkb2AA7Jyq2NsMHMhJAu4mUnNx6LoC5hAImIldpyDDp2KIeW/iRLqDeFVqCPguWHio/i0pHqMVQkhC140tsboxcM/AIn0i2aSw/01UU4HCBlwVas800DwIW2zekkzhtcbyBwan2MwmAePuNt3NRHjyBNPT8m8bj1YoMG5EC+Tcvb50illp9gByZER2ms="
    file: 
-     - diagrams.pdf
+     - factorization.pdf
    skip_cleanup: 
      - true
    on:

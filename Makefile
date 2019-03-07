@@ -6,7 +6,7 @@ all: $(targets)
 %.pdf: %.tex
 	-pdflatex --shell-escape $^
 	-pdflatex --shell-escape $^
-	-@$(OPEN) diagrams.pdf
+	-@$(OPEN) factorization.pdf
 
 .PHONY: clean
 
